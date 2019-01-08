@@ -5,5 +5,7 @@
 
 代码示例：
 ConvertUtil.getPriceByCny("ETH");// 获取ETH的人民币价格
+
 ConvertUtil.getPriceByUsd("ETH");// 获取ETH的美元价格
+
 ConvertUtil.getPriceByBtc("ETH");// 获取ETH的比特币价格
