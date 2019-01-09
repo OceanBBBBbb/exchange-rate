@@ -1,18 +1,15 @@
-package com.goopal.rate.jobs;
+package com.goopal.rate.bean;
 
 import com.alibaba.fastjson.JSONArray;
+import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
 
 @Data
 @ToString
+@Builder
 public class Feixiaohao {
 
   private long ctime;
   private JSONArray jsonArray;
-
-  public Feixiaohao(long l, JSONArray array) {
-    this.ctime=l;
-    this.jsonArray=array;
-  }
 }

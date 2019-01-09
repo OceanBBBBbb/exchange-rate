@@ -1,10 +1,6 @@
-package com.goopal.rate.jobs;
+package com.goopal.rate.utils;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.net.URL;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -25,6 +21,11 @@ public class OkHttpClientUtil {
     private static OkHttpClient client = null;
 
     static {
+        try {
+            SslUtil.ignoreSsl();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         client = new OkHttpClient.Builder()
             .connectTimeout(5L, TimeUnit.SECONDS)
             .readTimeout(20L, TimeUnit.SECONDS)
@@ -55,6 +56,9 @@ public class OkHttpClientUtil {
                 requestBuilder.addHeader(key, (String)headers.get(key));
             }
         }
+//        if("https".equalsIgnoreCase(new URL(url.toString()).getProtocol())){//判定网址是否信任，不信任则调用忽略信任工具类SslUtil
+//            SslUtil.ignoreSsl();
+//        }
         Request request = (requestBuilder).url(url.toString()).build();
         Response response = client.newCall(request).execute();
         String responseStr = response.body() == null?"":response.body().string();
