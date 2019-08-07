@@ -14,7 +14,7 @@ import java.util.TreeMap;
  */
 public class ConvertFXH {
 
-  static String feixiaohao = "https://dncapi.feixiaohao.com/api/coin/web-coinrank?page=1&type=0&pagesize=100&webp=1";
+  static String feixiaohao = "https://dncapi.bqiapp.com/api/coin/web-coinrank?page=1&type=-1&pagesize=100&webp=1";
   private static DataCache dataCache = DataCache.getDataCache();
 
   /**
