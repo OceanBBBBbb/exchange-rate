@@ -36,7 +36,7 @@ public class ReptileCMC {
     Elements symbols = coinMarketCap.getSymbols();
     BigDecimal curryRates = new BigDecimal(currencyRates.attr(dataKeyCur)).setScale(8, RoundingMode.HALF_UP);// 这样就得到了美元价
     for (int i = 0; i < prices.size(); i++) {
-      String symbol = symbols.get(i + 4).ownText();// 币名
+      String symbol = symbols.get(i + 2).ownText();// 币名
       if(symbol.equalsIgnoreCase(coin)){
         Element element = prices.get(i);
         BigDecimal priceUsd = new BigDecimal(element.attr("data-usd"));
@@ -50,7 +50,7 @@ public class ReptileCMC {
     boolean isStop = false;
     Document doc = null;
     try {
-      return Jsoup.connect(url).timeout(5000).get();
+      return Jsoup.connect(url).timeout(10000).get();
     } catch (Exception e) {
       throw new RuntimeException("connect fail", e);
     }
