@@ -30,8 +30,8 @@ public class DataCache {
   private static final long effective_time_fxh = 5000;//实际上一般6-10s才会刷新一次，去拿也是一样的数据,就担心刚好是变的前一刻拿的
   private static final long effective_time_cmc = 8000;//实际上一般6-10s才会刷新一次，去拿也是一样的数据,就担心刚好是变的前一刻拿的
 
-  private static Feixiaohao feixiaohao;
-  private static CoinMarketCap coinMarketCap;
+  private Feixiaohao feixiaohao;
+  private CoinMarketCap coinMarketCap;
 
   public Feixiaohao getFeixiaohao(){
     return this.feixiaohao;
