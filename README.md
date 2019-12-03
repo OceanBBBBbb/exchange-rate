@@ -15,8 +15,9 @@
 下载后打包引入。
 公共仓库maven:
 
-我把这个放线上了,可以直接调用查看效果,
-比如查比特币的实时美元价:https://www.361shipin.com/shipin/others/rate/get?coin=BTC&currency=USD
+我把这个放线上了,可以直接调用查看效果,</br>
+比如查比特币的实时美元价:</br>
+https://www.361shipin.com/shipin/others/rate/get?coin=BTC&currency=USD
 
 
 ## 代码示例：
