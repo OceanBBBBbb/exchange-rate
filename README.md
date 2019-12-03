@@ -8,25 +8,31 @@
 当前版本支持非小号上交易排名前100的币种，需要拓展更多币种的价格可以修改源码中的url做翻页等方式。
 
 - 2019-8-7 今日进行了更新：coinmarketcap更改了页面，修改了页面解析；非小号修改了api地址。
+- 2019-12-3 更新readme,增加对外接口演示地址
 
 ## 使用方法：
 下载后打包引入。
 公共仓库maven:
 
+我把这个放线上了,可以直接调用查看效果,
+比如查比特币的实时美元价:https://www.361shipin.com/shipin/others/rate/get?coin=BTC&currency=USD
+
 
 ## 代码示例：
+本地调用示例.
 
+```java
     System.out.println(getCoinPrice("BTC",Currency.EUR));// 获取综合指数价(汇率)
 
     System.out.println(ReptileCMC.getPriceByCMC("BTC",Currency.CNY));// 获取coinmarketcap的价(汇率)
 
     System.out.println(ConvertFXH.getPriceByFXH("BTC",CurrencyFXH.USD));// 获取feixiaohao的价(汇率)
-
+```
 
 ## 问题：
 
 1.只支持查询主流的100个币，但可以自己拓展；
 
-2.偶尔会有    javax.net.ssl.SSLHandshakeException
-于是在创建client的时候，忽略了ssl认证，SslUtil.ignoreSsl
+2.已解决.偶尔会有    ```javax.net.ssl.SSLHandshakeException```
+于是在创建client的时候，忽略了ssl认证,```SslUtil.ignoreSsl```
 
